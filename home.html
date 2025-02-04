@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8KMYP17RJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S8KMYP17RJ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geradores e Prompts Educacionais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .header {
+            background: linear-gradient(to right, #1919e6, #4a4aff);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .header p {
+            font-size: 1.25rem;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .button-group a {
+            background-color: #1919e6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .button-group a:hover {
+            background-color: #0000cc;
+        }
+        .button-group i {
+            margin-right: 0.5rem;
+        }
+
+        /* Estilo dos Cards com Ícone Redondo */
+        .card-round {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card-round:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+        .icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .card-round h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+        .card-round a {
+            background-color: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .card-round a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo do Chatbot Card */
+        .chatbot-card-round {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #1919e6;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 20px;
+            overflow: hidden;
+            margin: 2rem auto;
+        }
+        .chatbot-card-round:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .chatbot-card-round img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+        .chatbot-card-round h3 {
+            font-size: 1.25rem;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        .chatbot-card-round a {
+            background-color: #1919e6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px;
+        }
+        .chatbot-card-round a:hover {
+            background-color: #0000cc;
+        }
+
+        /* Estilo das setas de navegação */
+        .slick-prev,
+        .slick-next {
+            font-size: 24px;
+            color: #1919e6;
+            z-index: 1;
+        }
+        .slick-prev {
+            left: -30px;
+        }
+        .slick-next {
+            right: -30px;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            color: #1919e6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-lg">
+    <!-- Cabeçalho Explicativo -->
+    <header class="header">
+        <div class="container">
+            <h2>Hub de Geradores de Prompts para Professores</h2>
+            <p align="justify">Esta página foi projetada para facilitar o acesso a ferramentas que ajudam o professor a criar recursos educacionais personalizados. Clique nos cards abaixo para acessar os geradores específicos e começar a criar atividades com Inteligência Artificial (IA). </p>
+        </div>
+    </header>
+
+    <!-- Botões de Links -->
+    <div class="button-group">
+        <a href="https://educ.nekoweb.org/geradores/ferramentas/ferramentasparaprof.html" target="_blank"><i class="fas fa-tools"></i> Ferramentas úteis</a>
+        <a href="https://educ.nekoweb.org/geradores/produtividade.html" target="_blank"><i class="fas fa-tasks"></i> Produtividade</a>
+        <a href="https://educ.nekoweb.org/geradores%2Fferramentas/online.html" target="_blank"><i class="fas fa-globe"></i> Ferramentas Online</a>
+        <a href="https://educ.nekoweb.org/geradores/ebooktrilhas.html" target="_blank"><i class="fas fa-book"></i> E-book Trilhas</a>
+        <a href="https://educ.nekoweb.org/geradores%2Fferramentas/linksuteis.html" target="_blank"><i class="fas fa-book"></i> Links Úteis</a>
+        <a href="https://educ.nekoweb.org/geradores/colaborativo.html#inicio" target="_blank"><i class="fas fa-users"></i> Colaborativo</a>
+         <a href="https://mecred.mec.gov.br/sobre" target="_blank"><i class="fas fa-users"></i> MECRED</a>
+         <a href="https://drive.google.com/file/d/1avljSzF-90eadiiDK8gH7ABCw_CcVW7F/view?usp=sharing" target="_blank"><i class="fas fa-users"></i> Calendário Escolar 2025</a>
+    </div>
+
+    <!-- Botão centralizado com ícone e hover -->
+    <div style="text-align: center;">
+        <a href="https://chat.whatsapp.com/H1C4iA93qopKhKEcdlrlBj" target="_blank" style="text-decoration: none;">
+            <button style="background-color: #25D366; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s ease;">
+                <i class="fab fa-whatsapp"></i> Nossa comunidade
+            </button>
+        </a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="container p-6">
+        <h2 class="text-4xl font-bold mt-8 mb-6 text-center">Escolha a ferramenta que Você Precisa</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <!-- Atividade para Aula -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Atividade</h3>
+                <a href="https://educ.nekoweb.org/geradores/atvidade.html">Acessar</a>
+            </div>
+
+            <!-- Plano de Aula -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Plano de Aula</h3>
+                <a href="https://educ.nekoweb.org/geradores/aula.html">Acessar</a>
+            </div>
+
+            <!-- Plano de Unidade -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Plano de Unidade</h3>
+                <a href="https://educ.nekoweb.org/geradores/unidade.html">Acessar</a>
+            </div>
+
+            <!-- Atividade Avaliativa -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Ativ. Avaliativa</h3>
+                <a href="https://educ.nekoweb.org/geradores/avaliacao.html">Acessar</a>
+            </div>
+
+            <!-- Rubrica de Avaliação -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Rubrica Avaliativa</h3>
+                <a href="https://educ.nekoweb.org/geradores/rubrica.html">Acessar</a>
+            </div>
+
+            <!-- Sequência Didática -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-stream"></i>
+                </div>
+                <h3>Sequência Didática</h3>
+                <a href="https://educ.nekoweb.org/geradores/sequencia.html">Acessar</a>
+            </div>
+
+            <!-- Projeto Didático -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Projeto Didátco</h3>
+                <a href="https://educ.nekoweb.org/geradores/projeto.html">Acessar</a>
+            </div>
+
+            <!-- Correção de Texto -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-spell-check"></i>
+                </div>
+                <h3>Corrigir Texto</h3>
+                <a href="https://educ.nekoweb.org/geradores/texto.html">Acessar</a>
+            </div>
+
+            <!-- Texto de Apoio -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Texto de Apoio</h3>
+                <a href="https://educ.nekoweb.org/geradores/textobase.html">Acessar</a>
+            </div>
+
+            <!-- Atividades baseadas no mês -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <h3>Atividade do mês</h3>
+                <a href="https://educ.nekoweb.org/geradores/mes.html">Acessar</a>
+            </div>
+
+            <!-- Correção de Redação -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-pen"></i>
+                </div>
+                <h3>Corrigir Redação</h3>
+                <a href="https://educ.nekoweb.org/geradores/redacaoenem.html">Acessar</a>
+            </div>
+
+            <!-- Atividades de Alfabetização -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <h3>Atividade de Alfabetização</h3>
+                <a href="https://educ.nekoweb.org/geradores/alfabetizacao.html">Acessar</a>
+            </div>
+
+            <!-- Atividades SAEB -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3>Daseada no SAEB</h3>
+                <a href="https://educ.nekoweb.org/geradores/saeb.html">Acessar</a>
+            </div>
+
+            <!-- Aula Relevante -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Aula Relevante</h3>
+                <a href="https://educ.nekoweb.org/geradores/aularelevante.html">Acessar</a>
+            </div>
+
+            <!-- Atividades de Inglês -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3>Atividade de Inglês</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/ativ_ingles.html">Acessar</a>
+            </div>
+
+            <!-- Atividades de Matemática -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Atividade de Matemática</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/ativmatematica.html">Acessar</a>
+            </div>
+
+            <!-- Caça-Palavras -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Caça-Palavras</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/ca%C3%83%C2%A7apalavras.html">Acessar</a>
+            </div>
+
+            <!-- Cruzadas -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <h3>Palavras Cruzadas</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/cruzadas.html">Acessar</a>
+            </div>
+
+            <!-- Histórias -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Histórias Infantís</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/historias.html">Acessar</a>
+            </div>
+
+            <!-- Vocabulário -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-spell-check"></i>
+                </div>
+                <h3>Vocabulário</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/vocabuario.html">Acessar</a>
+            </div>
+
+            <!-- Compreensão de Texto -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <h3>Compreensão de Texto</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/compreensaotexto.html">Acessar</a>
+            </div>
+
+            <!-- Escape Room -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-door-open"></i>
+                </div>
+                <h3>Escape Room</h3>
+                <a href="https://educ.nekoweb.org/geradores%2Fnew/escaperoom.html">Acessar</a>
+            </div>
+
+            <!-- Atividades para Educação Infantil -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h3>Atifidade de Educação Infantil</h3>
+                <a href="https://educ.nekoweb.org/geradores/edinfantil.html">Acessar</a>
+            </div>
+
+            <!-- Atividades Socioemocionais -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Atividades Socioemocionais</h3>
+                <a href="https://educ.nekoweb.org/geradores/socioemocionais.html">Acessar</a>
+            </div>
+
+            <!-- Estudo de Caso -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Estudo de Caso</h3>
+                <a href="https://educ.nekoweb.org/geradores/estudodecaso.html">Acessar</a>
+            </div>
+
+            <!-- Atividades para PCD -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-wheelchair"></i>
+                </div>
+                <h3>Atividade para PCD</h3>
+                <a href="https://educ.nekoweb.org/geradores/pcd.html">Acessar</a>
+            </div>
+
+            <!-- Design Thinking -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Design Thinking</h3>
+                <a href="https://educ.nekoweb.org/geradores/designthinking.html">Acessar</a>
+            </div>
+
+            <!-- Sala de Aula Invertida -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-retweet"></i>
+                </div>
+                <h3>Sala de Aula Invertida</h3>
+                <a href="https://educ.nekoweb.org/geradores/flipped.html">Acessar</a>
+            </div>
+
+            <!-- Trilha de Aprendizagem -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-road"></i>
+                </div>
+                <h3>Trilha de Aprendizagem</h3>
+                <a href="https://educ.nekoweb.org/geradores/trilha.html">Acessar</a>
+            </div>
+
+            <!-- Mapas Mentais -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-map"></i>
+                </div>
+                <h3>Mapas Mentais</h3>
+                <a href="https://educ.nekoweb.org/geradores/mapamental.html">Acessar</a>
+            </div>
+
+            <!-- Resumos -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Resumos</h3>
+                <a href="https://educ.nekoweb.org/geradores/resumo.html">Acessar</a>
+            </div>
+
+            <!-- Apresentação de Slides -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Slides</h3>
+                <a href="https://educ.nekoweb.org/geradores/apresenta%C3%83%C2%A7%C3%83%C2%B5es.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Habilidades e Competências da BNCC -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Habilidades da BNCC</h3>
+                <a href="https://educ.nekoweb.org/geradores/bncc.html">Acessar</a>
+            </div>
+
+            <!-- Recursos Educacionais -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-toolbox"></i>
+                </div>
+                <h3>Recursos Didáticos</h3>
+                <a href="https://educ.nekoweb.org/geradores/recursos.html">Acessar</a>
+            </div>
+
+            <!-- Jogos Educativos -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h3>Games</h3>
+                <a href="https://educ.nekoweb.org/geradores/jogos.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Quizzes -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h3>Quizzes</h3>
+                <a href="https://educ.nekoweb.org/geradores/quiz.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Questões de PDF -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Questões de PDF</h3>
+                <a href="https://educ.nekoweb.org/geradores/questtoespdf.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Boletim de Acompanhamento da Aprendizagem -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Boletim de Aprendizagem</h3>
+                <a href="https://educ.nekoweb.org/geradores/boletim.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Perguntas sobre Vídeos -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Questões de Vídeos</h3>
+                <a href="https://educ.nekoweb.org/geradores/questoesvideos.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Autocorreção de Textos para Erros Comuns -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Autocorreção de Textos</h3>
+                <a href="https://educ.nekoweb.org/geradores/autocorrecao.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Imagens -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-image"></i>
+                </div>
+                <h3>Gerar Imagens</h3>
+                <a href="https://educ.nekoweb.org/geradores/imagens.html">Acessar</a>
+            </div>
+
+            <!-- Criar Temas Geradores para EJA -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Atividades de EJA</h3>
+                <a href="https://educ.nekoweb.org/geradores/temagerador.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Atividades para Creches -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-baby"></i>
+                </div>
+                <h3>Atividades de Creche</h3>
+                <a href="https://educ.nekoweb.org/geradores/creche.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Quadros Comparativos -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Quadro Comparativo</h3>
+                <a href="https://educ.nekoweb.org/geradores/quadrocomparativo.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Planos de Aula com Filmes Nacionais -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h3>Filmes Nacionais</h3>
+                <a href="https://educ.nekoweb.org/geradores/filme.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Prompt para Pesquisa de Bibliografia -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Bibliografia</h3>
+                <a href="https://educ.nekoweb.org/geradores/bibliografia.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Prompt para Aulas de Geometria -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-shapes"></i>
+                </div>
+                <h3>Atividades de Geometria</h3>
+                <a href="https://educ.nekoweb.org/geradores/geometria.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Prompt para Debate Regrado -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Debate Regrado</h3>
+                <a href="https://educ.nekoweb.org/geradores/debate.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Prompt para Linhas do Tempo -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3>Linha do Tempo</h3>
+                <a href="https://educ.nekoweb.org/geradores/linhadotempo.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Prompt para o Primeiro Dia de Aula -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>1º Dia de Aula</h3>
+                <a href="https://educ.nekoweb.org/geradores/primer.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Planejamento para Educação Integral -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Educação Integral</h3>
+                <a href="https://educ.nekoweb.org/geradores/integral.html">Acessar</a>
+            </div>
+
+            <!-- Detector de Plágio e Textos Gerados por AI -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Detector de AI</h3>
+                <a href="https://educ.nekoweb.org/geradores/plagio.html">Acessar</a>
+            </div>
+
+            <!-- Estratégias de Aprendizagem Personalizadas -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Estratégias de Aprendizagem</h3>
+                <a href="https://educ.nekoweb.org/geradores/aprendizagem.html">Acessar</a>
+            </div>
+
+            <!-- Análise de Texto Literário para Sala de Aula -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Texto Literário</h3>
+                <a href="https://educ.nekoweb.org/geradores/textoliterario.html">Acessar</a>
+            </div>
+
+            <!-- Plano de Aula sobre Ética e Valores -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Ética e Valores</h3>
+                <a href="https://educ.nekoweb.org/geradores/valores.html">Acessar</a>
+            </div>
+
+            <!-- Plano de Aula sobre Educação Ambiental -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Educação Ambiental</h3>
+                <a href="https://educ.nekoweb.org/geradores/ambiental.html">Acessar</a>
+            </div>
+
+            <!-- Plano de Aula sobre Consumo Consciente -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h3>Consumo Consciente</h3>
+                <a href="https://educ.nekoweb.org/geradores/consumo.html">Acessar</a>
+            </div>
+
+            <!-- Plano de Aula sobre Roteiros de Documentários -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h3>Roteiro de Documentário</h3>
+                <a href="https://educ.nekoweb.org/geradores/documentario.html">Acessar</a>
+            </div>
+
+            <!-- Plano de Aula sobre Júri Simulado -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Júri Simulado</h3>
+                <a href="https://educ.nekoweb.org/geradores/juri.html">Acessar</a>
+            </div>
+
+            <!-- Análise de Dados de Provas Escolares -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Corrigir Provas</h3>
+                <a href="https://educ.nekoweb.org/geradores/analisededados.html">Acessar</a>
+            </div>
+
+            <!-- Problemas de Matemática -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Problemas de Matemática</h3>
+                <a href="https://educ.nekoweb.org/geradores/problemasmatematicos.html">Acessar</a>
+            </div>
+
+            <!-- Teste Simulado -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Teste Simulado: ENEM, SAEB, SABE</h3>
+                <a href="https://educ.nekoweb.org/geradores/simulado.html">Acessar</a>
+            </div>
+
+            <!-- Teste Sondagem -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-poll"></i>
+                </div>
+                <h3>Teste de Sondagem</h3>
+                <a href="https://educ.nekoweb.org/geradores/sondagem.html">Acessar</a>
+            </div>
+
+            <!-- Conteúdos de Aula -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Conteúdos de Aula</h3>
+                <a href="https://educ.nekoweb.org/geradores/conteudos.html">Acessar</a>
+            </div>
+
+            <!-- Base PNLD -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Base PNLD por Unidade</h3>
+                <a href="https://educ.nekoweb.org/geradores/pnld.html">Acessar</a>
+            </div>
+
+            <!-- Descritores SAEB -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3>Descritores SAEB Português</h3>
+                <a href="https://educ.nekoweb.org/geradores/descritoressaeb.html">Acessar</a>
+            </div>
+
+            <!-- Descritores SAEB Matemática -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-calculator"></i> <!-- Ícone de calculadora, comum para matemática -->
+                </div>
+                <h3>Descritores SAEB Matemática</h3>
+                <a href="https://educ.nekoweb.org/geradores/descritoresmatematica.html">Acessar</a>
+            </div>
+
+            <!-- Gerador de Prompt para os Quatro Pilares da Educação -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Plano 4 Pilares da Educação</h3>
+                <a href="https://educ.nekoweb.org/geradores/quatropilares.html">Acessar</a>
+            </div>
+
+            <!-- Novo Card -->
+            <div class="card-round">
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Plano Específico para o FI</h3>
+                <a href="https://educ.nekoweb.org/geradores/planof1.html">Acessar</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Slick Carousel JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
